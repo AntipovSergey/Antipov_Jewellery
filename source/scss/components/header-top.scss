@@ -1,0 +1,222 @@
+.header-top {
+  padding-bottom: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-top__menu {
+  padding-top: 11px;
+}
+
+.header-top__search form {
+  position: relative;
+}
+
+.header-top__search form::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 0;
+  background-image: url("../img/icons/search-header-top.svg");
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+
+.header-top__search input::placeholder {
+  color: $color-muesli;
+}
+
+.header-top__search input {
+  padding-left: 29px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-black;
+}
+
+.header-top__search input:hover::placeholder,
+.header-top__search input:focus::placeholder {
+  color: $color-black;
+}
+
+.header-top__burger {
+  display: none;
+}
+
+.header-top__logo {
+  display: block;
+  margin-right: 89px;
+  color: $color-muesli;
+}
+
+.header-top__user-navigation {
+  padding-top: 12px;
+  width: 119px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.header-top__user-navigation a {
+  display: block;
+  position: relative;
+}
+
+.header-top__user-navigation a::before {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: $color-zeus;
+  transition: all ease-in-out 0.3s;
+}
+
+.header-top__user-navigation a:hover::before,
+.header-top__user-navigation a:focus::before,
+.header-top__user-navigation a:active::before {
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+
+.header-top__cart svg {
+  display: none;
+}
+
+.header-top__cart span:first-of-type {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 3px;
+}
+
+@include tablet {
+  .header-top {
+    padding: 0;
+  }
+
+  .header-top.open,
+  .header-top.header-top--nojs {
+    background-color: $color-muesli;
+  }
+
+  .header-top.open .header-top__burger,
+  .header-top.open .header-top__logo,
+  .header-top.open .header-top__cart,
+  .header-top.header-top--nojs .header-top__burger,
+  .header-top.header-top--nojs .header-top__logo,
+  .header-top.header-top--nojs .header-top__cart {
+    color: $color-white;
+  }
+
+  .header-top__search form {
+    display: none;
+  }
+
+  .header-top__burger {
+    display: block;
+    color: $color-zeus;
+    padding: 0;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .header-top__menu {
+    padding-top: 23px;
+    margin-right: 5px;
+  }
+
+  .header-top__logo {
+    margin-right: 12px;
+  }
+
+  .header-top__user-navigation {
+    padding-top: 24px;
+    width: 18px;
+  }
+
+  .header-top__cart {
+    color: $color-zeus;
+    fill: transparent;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .header-top__cart svg {
+    display: block;
+  }
+
+  .header-top__login {
+    display: none;
+  }
+
+  .header-top__cart span {
+    display: none;
+  }
+
+  .header-top__cart span:first-of-type {
+    display: none;
+  }
+
+  .header-top__user-navigation a:first-of-type {
+    display: none;
+  }
+
+  .header-top__user-navigation a:hover::before,
+  .header-top__user-navigation a:focus::before,
+  .header-top__user-navigation a:active::before {
+    display: none;
+  }
+
+  .header-top__cart:hover,
+  .header-top__cart:focus,
+  .header-top__cart:active {
+    color: $color-muesli;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .header-top.open .header-top__cart:hover,
+  .header-top.open .header-top__cart:focus,
+  .header-top.open .header-top__cart:active,
+  .header-top.header-top--nojs .header-top__cart:hover,
+  .header-top.header-top--nojs .header-top__cart:focus,
+  .header-top.header-top--nojs .header-top__cart:active {
+    color: $color-black;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .header-top__burger:hover,
+  .header-top__burger:focus,
+  .header-top__burger:active {
+    color: $color-muesli;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .header-top.open .header-top__burger:hover,
+  .header-top.open .header-top__burger:focus,
+  .header-top.open .header-top__burger:active,
+  .header-top.header-top--nojs .header-top__burger:hover,
+  .header-top.header-top--nojs .header-top__burger:focus,
+  .header-top.header-top--nojs .header-top__burger:active {
+    color: $color-black;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+@include mobile {
+  .header-top__menu {
+    padding-top: 17px;
+  }
+
+  .header-top__logo svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .header-top__user-navigation {
+    padding-top: 17px;
+  }
+}

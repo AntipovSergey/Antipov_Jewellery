@@ -1,0 +1,79 @@
+.goods-list {
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 10px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  column-gap: 36px;
+  justify-content: center;
+}
+
+.goods-list__link {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.goods-list__link::before {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: $color-zeus;
+  transition: all ease-in-out 0.3s;
+}
+
+.goods-list__link:hover::before,
+.goods-list__link:focus::before,
+.goods-list__link:active::before {
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+
+
+@include tablet {
+  .goods-list {
+    margin: 0;
+    margin-top: 45px;
+    padding: 0;
+    display: block;
+  }
+
+  .goods-list__item:not(:last-child) {
+    margin-bottom: 21px;
+  }
+
+  .goods-list__link {
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-white;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .goods-list__link:hover,
+  .goods-list__link:focus,
+  .goods-list__link:active {
+    color: $color-black;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .goods-list__link::before {
+    display: none;
+  }
+
+  .goods-list__link:hover::before,
+  .goods-list__link:focus::before,
+  .goods-list__link:active::before {
+    display: none;
+  }
+}
+
+@include mobile {
+  .goods-list {
+    margin-top: 37px;
+  }
+}

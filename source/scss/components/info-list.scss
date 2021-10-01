@@ -1,0 +1,28 @@
+.info-list {
+  display: none;
+}
+
+@include tablet {
+  .info-list {
+    display: block;
+    padding: 0;
+    list-style: none;
+  }
+
+  .info-list__item:not(:last-child) {
+    margin-bottom: 21px;
+  }
+
+  .info-list__link {
+    font-size: 18px;
+    color: rgba($color: $color-white, $alpha: 0.75);
+    transition: all ease-in-out 0.3s;
+  }
+
+  .info-list__link:hover,
+  .info-list__link:focus,
+  .info-list__link:active {
+    color: $color-black;
+    transition: all ease-in-out 0.3s;
+  }
+}

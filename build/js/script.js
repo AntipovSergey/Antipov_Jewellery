@@ -1,21 +1,20 @@
 //Реализация открытия/закрытия меню в шапке и no-js
-const nav = document.querySelector('.navigation');
-const menuBtn = document.querySelector('.main-header__menu');
-const menuClose = document.querySelector('.navigation__close');
+const header = document.querySelector('.main-header')
+const bottomMenu = document.querySelector('.header-bottom');
+const topMenu = document.querySelector('.header-top');
+const menuBtn = document.querySelector('.header-top__burger');
 
-if(nav) {
-  nav.classList.remove('navigation--nojs');
+if(bottomMenu && topMenu && header) {
+  bottomMenu.classList.remove('header-bottom--nojs');
+  topMenu.classList.remove('header-top--nojs');
+  header.classList.remove('main-header--nojs');
 }
 
 if(menuBtn) {
   menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
-  });
-}
-
-if(menuClose) {
-  menuClose.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
+    header.classList.toggle('open');
+    topMenu.classList.toggle('open');
+    bottomMenu.classList.toggle('open');
   });
 }
 

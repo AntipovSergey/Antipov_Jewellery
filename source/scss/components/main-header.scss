@@ -1,0 +1,21 @@
+.main-header__container {
+  padding-top: 30px;
+}
+
+@include tablet {
+  .main-header.open,
+  .main-header.main-header--nojs {
+    background-color: $color-muesli;
+  }
+
+  .main-header__container {
+    padding-bottom: 40px;
+  }
+}
+
+@include mobile {
+  .main-header__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
