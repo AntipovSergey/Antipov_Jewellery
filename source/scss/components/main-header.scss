@@ -8,14 +8,19 @@
     background-color: $color-muesli;
   }
 
+  .main-header.open .main-header__container,
+  .main-header.main-header--nojs .main-header__container {
+    padding-bottom: 36px;
+  }
+
   .main-header__container {
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
 }
 
 @include mobile {
   .main-header__container {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 }
