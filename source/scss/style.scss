@@ -1,5 +1,6 @@
 //ГЛОБАЛЬНЫЕ ЭЛЕМЕНТЫ
 @import "./vendor/normalize";
+@import "./vendor/swiper";
 @import "vars";
 @import "mixins";
 @import "fonts";
@@ -12,3 +13,5 @@
 @import "./components/goods-list";
 @import "./components/info-list";
 @import "./components/promo";
+@import "./components/headings";
+@import "./components/slider";

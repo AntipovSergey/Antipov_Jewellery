@@ -76,3 +76,87 @@ window.addEventListener('DOMContentLoaded', function(){
     })
   }
 })
+
+//Swiper
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    type: "fraction",
+    renderFraction: function (currentClass, totalClass) {
+      return '<span style="margin-right: 9px; font-size: 16px; line-height: 130%; font-weight: 500; font-family: "Poppins", "Arial", sans-serif;" class="' + currentClass + '"></span>' +
+              ' of ' +
+              '<span style="margin-left: 9px; font-size: 16px; line-height: 130%; font-weight: 500; font-family: "Poppins", "Arial", sans-serif;" class="' + totalClass + '"></span>';
+  }
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span style="font-size: 16px; line-height: 130%; font-weight: 500; font-family: "Poppins", "Arial", sans-serif;" class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    },
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span style="font-size: 16px; line-height: 130%; font-weight: 500; font-family: "Poppins", "Arial", sans-serif;" class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    },
+    1200: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span style="font-size: 16px; line-height: 130%; font-weight: 500; font-family: "Poppins", "Arial", sans-serif;" class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    }
+  }
+});
+
+const slider = document.querySelector('.swiper-container');
+const mediaQuery = window.matchMedia('(min-width: 1023px)')
+if (slider) {
+  function handleTabletChange(e) {
+    if (e.matches) {
+      slider.classList.add('swiper-no-swiping');
+      swiper.update();
+    } else {
+      slider.classList.remove('swiper-no-swiping');
+      swiper.update();
+    }
+  }
+  mediaQuery.addListener(handleTabletChange)
+  handleTabletChange(mediaQuery)
+}

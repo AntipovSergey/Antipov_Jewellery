@@ -27,27 +27,12 @@
     display: none;
   }
 
-  .header-bottom.open,
-  .header-bottom.header-bottom--nojs {
-    display: block;
-  }
-
-  .header-bottom.header-bottom--nojs {
-    padding: 0 45px;
-    position: absolute;
-    top: 11.8%;
-    left: 0;
-    right: 0;
-    background-color: $color-muesli;
-    height: 100vh;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 100;
-  }
-
+  .header-bottom.header-bottom--nojs,
   .header-bottom.open {
+    display: block;
     padding: 0 45px;
     position: absolute;
-    top: 11.8%;
+    top: 137px;
     left: 0;
     right: 0;
     background-color: $color-muesli;
@@ -133,7 +118,7 @@
   .header-bottom.open,
   .header-bottom.header-bottom--nojs {
     padding: 0 15px;
-    top: 8.8%;
+    top: 102px;
   }
 
   .header-bottom.open .header-bottom__info-list,
