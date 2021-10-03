@@ -26,17 +26,6 @@ if(selector) {
   im.mask(selector);
 }
 
-//Включение видео
-const playButton = document.querySelector('.video__button');
-
-if(playButton) {
-  playButton.addEventListener('click', (e) => {
-    let video = e.currentTarget.closest('.video__video').querySelector('video');
-    video.play();
-    e.currentTarget.classList.toggle('is-hide');
-  });
-}
-
 //Закрытие меню при нажатии на ссылку в планшетной и мобильной версиях
 const links = document.querySelectorAll('.navigation__link');
 
@@ -159,4 +148,69 @@ if (slider) {
   }
   mediaQuery.addListener(handleTabletChange)
   handleTabletChange(mediaQuery)
+}
+
+//Аккордеон
+const accordeons = document.querySelectorAll('.questions__accordeon');
+
+if (accordeons) {
+  accordeons.forEach(el => {
+    el.classList.remove('questions__accordeon--nojs');
+  })
+
+  accordeons.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const self = e.currentTarget;
+      const control = document.querySelector('.questions__accordeon-button');
+      const content = document.querySelector('.questions__accordeon-bottom');
+
+
+      // self.classList.toggle('is-open');
+      if (self.classList.contains('is-open')) {
+        self.classList.remove('is-open');
+      } else {
+        for (item of accordeons) {
+          item.classList.remove('is-open');
+        }
+        self.classList.add('is-open');
+      }
+
+      if (self.classList.contains('is-open')) {
+        control.setAttribute('aria-expanded', true);
+        content.setAttribute('aria-hidden', false);
+      } else {
+        control.setAttribute('aria-expanded', false);
+        content.setAttribute('aria-hidden', true);
+      }
+    });
+  });
+
+  accordeons.forEach(el => {
+    el.addEventListener('keydown', (e) => {
+      if(e.keyCode === 32) {
+        const self = e.currentTarget;
+        const control = document.querySelector('.questions__accordeon-button');
+        const content = document.querySelector('.questions__accordeon-bottom');
+
+
+        // self.classList.toggle('is-open');
+        if (self.classList.contains('is-open')) {
+          self.classList.remove('is-open');
+        } else {
+          for (item of accordeons) {
+            item.classList.remove('is-open');
+          }
+          self.classList.add('is-open');
+        }
+
+        if (self.classList.contains('is-open')) {
+          control.setAttribute('aria-expanded', true);
+          content.setAttribute('aria-hidden', false);
+        } else {
+          control.setAttribute('aria-expanded', false);
+          content.setAttribute('aria-hidden', true);
+        }
+      }
+    });
+  });
 }

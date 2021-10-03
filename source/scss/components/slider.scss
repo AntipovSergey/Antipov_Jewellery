@@ -1,7 +1,7 @@
 .slider__container {
   position: relative;
   padding-top: 121px;
-  padding-bottom: 10px;
+  padding-bottom: 116px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -20,13 +20,13 @@
 .slider__container a {
   margin-bottom: 58px;
   transition: all ease-in-out 0.3s;
+}
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color-muesli;
-    transition: all ease-in-out 0.3s;
-  }
+.slider__container a:hover,
+.slider__container a:focus,
+.slider__container a:active {
+  color: $color-muesli;
+  transition: all ease-in-out 0.3s;
 }
 
 .swiper-container {
@@ -133,6 +133,7 @@
 @include tablet {
   .slider__container {
     padding-top: 70px;
+    padding-bottom: 67px;
   }
 
   .slider__container h2 {
@@ -173,6 +174,7 @@
 @include mobile {
   .slider__container {
     padding-top: 59px;
+    padding-bottom: 55px;
   }
 
   .slider__container a {
