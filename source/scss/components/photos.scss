@@ -1,0 +1,128 @@
+.photos__container {
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photos__container h2 {
+  margin-bottom: 31px;
+  letter-spacing: 0.03em;
+}
+
+.photos__container a {
+  margin-bottom: 60px;
+  padding-bottom: 4px;
+  transition: all ease-in-out 0.3s;
+}
+
+.photos__container a:hover,
+.photos__container a:focus,
+.photos__container a:active {
+  color: $color-muesli;
+  transition: all ease-in-out 0.3s;
+}
+
+.photos__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  column-gap: 27px;
+  row-gap: 34px;
+  grid-template-areas:
+    "first-medium big second-medium third-medium"
+    "first-small big second-small third-small";
+}
+
+.photos__item--first-medium {
+  grid-area: first-medium;
+}
+
+.photos__item--second-medium {
+  grid-area: second-medium;
+}
+
+.photos__item--third-medium {
+  grid-area: third-medium;
+}
+
+.photos__item--first-small {
+  grid-area: first-small;
+}
+
+.photos__item--second-small {
+  grid-area: second-small;
+}
+
+.photos__item--third-small {
+  grid-area: third-small;
+}
+
+.photos__item--big {
+  grid-area: big;
+}
+
+@include tablet {
+  .photos__list {
+    width: 100%;
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+
+  .photos__container h2 {
+    margin-bottom: 21px;
+  }
+
+  .photos__container a {
+    margin-bottom: 58px;
+  }
+
+  .photos__item--first-medium,
+  .photos__item--second-medium,
+  .photos__item--third-medium {
+    min-width: 133px;
+    height: 133px;
+  }
+
+  .photos__item--first-small,
+  .photos__item--second-small,
+  .photos__item--third-small {
+    min-width: 133px;
+    height: 87px;
+  }
+
+  .photos__item--big {
+    min-width: 231px;
+    height: 240px;
+  }
+}
+
+@include mobile {
+  .photos__list {
+    column-gap: 24px;
+    row-gap: 27px;
+    grid-template-areas:
+      "first-medium big"
+      "first-small big"
+      "second-small third-small";
+  }
+
+  .photos__container a {
+    margin-bottom: 44px;
+  }
+
+  .photos__item--big {
+    min-width: 133px;
+    height: 247px;
+  }
+
+  .photos__item img {
+    width: 100%;
+  }
+
+  .photos__item--second-medium,
+  .photos__item--third-medium {
+    display: none;
+  }
+}
