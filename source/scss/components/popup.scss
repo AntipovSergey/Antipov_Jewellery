@@ -1,0 +1,226 @@
+.popup {
+  margin: 0 25px;
+  min-width: 270px;
+  display: none;
+  position: relative;
+  width: 430px;
+  height: 586px;
+  background-color: $color-pearl-bush;
+  box-shadow: 0 5px 32px $color-desert-storm;
+}
+
+.popup--tablet {
+  width: 442px;
+}
+
+.popup--opened {
+  display: block;
+}
+
+.popup__close {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  color: $color-zeus;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-white;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.popup__img {
+  height: 138px;
+  background-image: url("../img/popup-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/popup-img@2x.jpg");
+  }
+}
+
+.popup__content {
+  padding: 60px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup__content h2 {
+  margin: 0;
+  margin-bottom: 39px;
+  font-family: "Cormorant", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.popup__content input:hover {
+  outline: 1px solid $color-zeus;
+}
+
+.popup__content label,
+.popup__content input {
+  background-color: transparent;
+  width: 100%;
+}
+
+.popup__content input {
+  padding: 10px 0;
+  color: $color-zeus;
+  border: none;
+  border-bottom: 1px solid $color-zeus;
+}
+
+.popup__content input::placeholder {
+  color: $color-dawn;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.popup__content input[name="popup-email"] {
+  margin-bottom: 25px;
+}
+
+.popup__content input[name="popup-password"] {
+  margin-bottom: 5px;
+}
+
+.popup__password {
+  display: block;
+  margin-bottom: 44px;
+  font-weight: 500;
+  text-align: right;
+  font-size: 12px;
+  line-height: 18px;
+  color: $color-dawn;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-muesli;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.popup__button {
+  display: block;
+  margin-bottom: 14px;
+  width: 100%;
+  padding-top: 26px;
+  padding-bottom: 23px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $color-white;
+  background: $color-muesli;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-black;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.popup__sign {
+  display: flex;
+  width: 231px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup__sign span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-dawn;
+}
+
+.popup__login {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 4px;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-muesli;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin-left: -20px;
+}
+
+@include tablet {
+  .popup {
+    width: 442px;
+  }
+
+  .popup__content {
+    padding: 62px 51px;
+  }
+
+  .popup__content h2 {
+    margin: 0 0 37px;
+  }
+
+  .popup__close svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@include mobile {
+  .popup {
+    width: 270px;
+    height: 470px;
+  }
+
+  .popup__content {
+    padding: 44px 15px;
+  }
+
+  .popup__img {
+    height: 85px;
+  }
+
+  .popup__content h2 {
+    margin: 0 0 21px;
+    font-size: 23px;
+  }
+
+  .popup__content input[name="popup-email"] {
+    margin-bottom: 22px;
+  }
+
+  .popup__password {
+    margin-bottom: 34px;
+  }
+
+  .popup__close svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .popup__close {
+    top: 15px;
+    right: 9px;
+  }
+}

@@ -18,32 +18,6 @@ if(menuBtn) {
   });
 }
 
-//Отправка формы
-const form = document.querySelector('#footer-form');
-if(form) {
-  form.onsubmit = async (e) => {
-    e.preventDefault();
-
-    await fetch('https://echo.htmlacademy.ru/', {
-      method: 'POST',
-      body: new FormData(form)
-    })
-
-    form.reset();
-  };
-}
-
-//Local storage
-window.addEventListener('DOMContentLoaded', function(){
-  const formFooterMail = document.getElementById('email');
-  const buttonFooter = document.querySelector('.main-footer__button')
-  if(buttonFooter) {
-    buttonFooter.addEventListener('click', function(){
-        localStorage.setItem('footerMail', formFooterMail.value);
-    })
-  }
-})
-
 //Swiper
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 2,
@@ -192,3 +166,96 @@ if (accordeons) {
     });
   });
 }
+
+//Popup
+const buttonOpen = document.querySelector('.header-top__login');
+const buttonOpenTablet = document.querySelector('.header-bottom__login');
+const buttonClose = document.querySelector('.popup__close');
+const popup = document.querySelector('.popup');
+const overlay = document.querySelector('.overlay');
+const body = document.body;
+
+if(buttonOpen) {
+  buttonOpen.addEventListener('click', (e) => {
+    e.preventDefault();
+    formPopup.reset();
+    overlay.classList.toggle('overlay--shown');
+    popup.classList.toggle('popup--opened');
+    body.classList.add('disable-scroll');
+  })
+};
+
+if(buttonOpenTablet) {
+  buttonOpenTablet.addEventListener('click', (e) => {
+    e.preventDefault();
+    formPopup.reset();
+    overlay.classList.toggle('overlay--shown');
+    popup.classList.toggle('popup--opened');
+    body.classList.add('disable-scroll');
+  })
+};
+
+if(buttonClose) {
+  buttonClose.addEventListener('click', () => {
+    overlay.classList.remove('overlay--shown');
+    popup.classList.remove('popup--opened');
+    body.classList.remove('disable-scroll');
+  })
+};
+
+document.addEventListener('keydown', (evt) => {
+  if(evt.keyCode === 27) {
+    overlay.classList.remove('overlay--shown');
+    popup.classList.remove('popup--opened');
+    body.classList.remove('disable-scroll');
+  }
+})
+
+if(overlay) {
+  overlay.addEventListener('click', (evt) => {
+    if (evt.target === overlay) {
+      overlay.classList.remove('overlay--shown');
+      popup.classList.remove('popup--opened');
+      body.classList.remove('disable-scroll');
+    }
+  });
+};
+
+//Отправка формы
+const formFooter = document.querySelector('#footer-form');
+const formPopup = document.querySelector('#popup-form');
+const submitForm = (form) => {
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch('https://echo.htmlacademy.ru/', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+
+    form.reset();
+    overlay.classList.toggle('overlay--shown');
+    popup.classList.toggle('popup--opened');
+  };
+}
+
+submitForm(formFooter);
+submitForm(formPopup)
+
+//Local storage
+window.addEventListener('DOMContentLoaded', function(){
+  const formFooterMail = document.querySelector('#email');
+  const formPopupMail = document.querySelector('#popup-email');
+  const buttonFooter = document.querySelector('.main-footer__button')
+  const buttonPopup = document.querySelector('.popup__button')
+  if(buttonFooter) {
+    buttonFooter.addEventListener('click', function(){
+        localStorage.setItem('footerMail', formFooterMail.value);
+    })
+  }
+  if(buttonPopup) {
+    buttonPopup.addEventListener('click', function(){
+        localStorage.setItem('popupMail', formPopupMail.value);
+    })
+  }
+})

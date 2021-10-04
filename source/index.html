@@ -39,7 +39,7 @@
             </svg>
           </a>
           <div class="header-top__user-navigation">
-            <a class="header-top__login" href="#">Login</a>
+            <a class="header-top__login" href="popup.html">Login</a>
             <a class="header-top__cart" href="#">
               <svg width="20" height="18"  xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#cart"></use>
@@ -85,7 +85,7 @@
               <a href="#" class="info-list__link">Contact Us</a>
             </li>
           </ul>
-          <a href="#" class="header-bottom__login">Login</a>
+          <a href="popup.html" class="header-bottom__login">Login</a>
         </div>
       </div>
     </header>
@@ -367,9 +367,9 @@
         <div class="main-footer__first-column">
           <h2>The good stuff in your inbox</h2>
           <p>News and updates from CH. No spam, we promise.</p>
-          <form id="footer-form" method="GET" action="https://echo.htmlacademy.ru/">
+          <form id="footer-form" method="POST" action="https://echo.htmlacademy.ru/">
             <label for="email">
-              <input type="email" name="email" id="email" placeholder="Your E-mail">
+              <input type="email" name="email" id="email" placeholder="Your E-mail" autocomplete="off">
             </label>
             <button class="main-footer__button btn-reset" type="submit" tabindex="-1">
               <span>Sign Up</span>
@@ -445,6 +445,33 @@
         </div>
       </div>
     </footer>
+    <div class="overlay">
+      <div class="popup">
+        <button class="popup__close btn-reset" aria-label="Закрыть модальное окно">
+          <svg width="14" height="14"  xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#popup-close"></use>
+          </svg>
+        </button>
+        <div class="popup__img"></div>
+        <div class="popup__content">
+          <h2>Log In</h2>
+          <form id="popup-form" method="POST" action="https://echo.htmlacademy.ru/">
+            <label for="popup-email">
+              <input type="email" name="popup-email" id="popup-email" placeholder="Your E-mail" required autocomplete="off">
+            </label>
+            <label for="popup-password">
+              <input type="password" name="popup-password" id="popup-password" placeholder="Password" required autocomplete="off">
+            </label>
+            <a class="popup__password" href="#">Forgot your password?</a>
+            <button class="popup__button btn-reset" type="submit">Log In</button>
+          </form>
+          <div class="popup__sign">
+            <span>Don’t have an account?</span>
+            <a class="popup__login" href="#">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/vendor.js"></script>
   <script src="js/script.js"></script>
