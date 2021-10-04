@@ -18,28 +18,8 @@ if(menuBtn) {
   });
 }
 
-//Маска для поля tel
-let selector = document.getElementById('form-tel');
-let im = new Inputmask('+7 (999) 999-99-99');
-
-if(selector) {
-  im.mask(selector);
-}
-
-//Закрытие меню при нажатии на ссылку в планшетной и мобильной версиях
-const links = document.querySelectorAll('.navigation__link');
-
-if(links) {
-  for (let link of links) {
-    link.addEventListener ('click', () => {
-      nav.classList.remove('is-open');
-    })
-  }
-}
-
-
 //Отправка формы
-const form = document.querySelector('.promo__form');
+const form = document.querySelector('#footer-form');
 if(form) {
   form.onsubmit = async (e) => {
     e.preventDefault();
@@ -55,13 +35,11 @@ if(form) {
 
 //Local storage
 window.addEventListener('DOMContentLoaded', function(){
-  const formTel = document.getElementById('form-tel');
-  const formName = document.getElementById('form-name');
-  const button = document.querySelector('.form__button')
-  if(button) {
-    button.addEventListener('click', function(){
-        localStorage.setItem('tel', formTel.value);
-        localStorage.setItem('name', formName.value);
+  const formFooterMail = document.getElementById('email');
+  const buttonFooter = document.querySelector('.main-footer__button')
+  if(buttonFooter) {
+    buttonFooter.addEventListener('click', function(){
+        localStorage.setItem('footerMail', formFooterMail.value);
     })
   }
 })

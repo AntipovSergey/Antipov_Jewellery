@@ -1,5 +1,5 @@
 .photos__container {
-  padding-bottom: 100px;
+  padding-bottom: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,6 +64,10 @@
 }
 
 @include tablet {
+  .photos__container {
+    padding-bottom: 81px;
+  }
+
   .photos__list {
     width: 100%;
     column-gap: 16px;
@@ -99,6 +103,10 @@
 }
 
 @include mobile {
+  .photos__container {
+    padding-bottom: 70px;
+  }
+
   .photos__list {
     column-gap: 24px;
     row-gap: 27px;
