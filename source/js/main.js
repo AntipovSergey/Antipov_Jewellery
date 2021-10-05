@@ -1,3 +1,7 @@
+document.onkeydown = function(e){
+  if (e.keyCode == 32) e.preventDefault();
+};
+
 //Реализация открытия/закрытия меню в шапке и no-js
 const header = document.querySelector('.main-header')
 const bottomMenu = document.querySelector('.header-bottom');
@@ -115,8 +119,6 @@ if (accordeons) {
       const self = e.currentTarget;
       const control = document.querySelector('.questions__accordeon-button');
       const content = document.querySelector('.questions__accordeon-bottom');
-
-
       // self.classList.toggle('is-open');
       if (self.classList.contains('is-open')) {
         self.classList.remove('is-open');
@@ -143,8 +145,6 @@ if (accordeons) {
         const self = e.currentTarget;
         const control = document.querySelector('.questions__accordeon-button');
         const content = document.querySelector('.questions__accordeon-bottom');
-
-
         // self.classList.toggle('is-open');
         if (self.classList.contains('is-open')) {
           self.classList.remove('is-open');
@@ -153,6 +153,70 @@ if (accordeons) {
             item.classList.remove('is-open');
           }
           self.classList.add('is-open');
+        }
+
+        if (self.classList.contains('is-open')) {
+          control.setAttribute('aria-expanded', true);
+          content.setAttribute('aria-hidden', false);
+        } else {
+          control.setAttribute('aria-expanded', false);
+          content.setAttribute('aria-hidden', true);
+        }
+      }
+    });
+  });
+}
+
+const accordeonsFilter = document.querySelectorAll('.filter__accordeon-top');
+const accordeonsFilterBottom = document.querySelectorAll('.filter__accordeon-bottom');
+
+if (accordeonsFilter && accordeonsFilterBottom) {
+  accordeonsFilter.forEach(el => {
+    el.classList.remove('filter__accordeon-top--nojs');
+  })
+
+  accordeonsFilterBottom.forEach(el => {
+    el.classList.remove('filter__accordeon-bottom--nojs');
+  })
+
+  accordeonsFilter.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const self = e.currentTarget;
+      const control = document.querySelector('.filter__accordeon-button');
+      const content = document.querySelector('.filter__accordeon-bottom');
+      // self.classList.toggle('is-open');
+      if (self.classList.contains('is-open')) {
+        self.classList.remove('is-open');
+        self.nextSibling.classList.remove('is-open');
+      } else {
+        self.classList.add('is-open');
+        self.nextSibling.classList.add('is-open');
+      }
+
+      if (self.classList.contains('is-open')) {
+        control.setAttribute('aria-expanded', true);
+        content.setAttribute('aria-hidden', false);
+      } else {
+        control.setAttribute('aria-expanded', false);
+        content.setAttribute('aria-hidden', true);
+      }
+    });
+  });
+
+  accordeonsFilter.forEach(el => {
+    el.addEventListener('keydown', (e) => {
+      if(e.keyCode === 32) {
+        console.log('g')
+        const self = e.currentTarget;
+        const control = document.querySelector('.filter__accordeon-button');
+        const content = document.querySelector('.filter__accordeon-bottom');
+        // self.classList.toggle('is-open');
+        if (self.classList.contains('is-open')) {
+          self.classList.remove('is-open');
+          self.nextSibling.classList.remove('is-open');
+        } else {
+          self.classList.add('is-open');
+          self.nextSibling.classList.add('is-open');
         }
 
         if (self.classList.contains('is-open')) {
@@ -224,7 +288,9 @@ if(overlay) {
 //Отправка формы
 const formFooter = document.querySelector('#footer-form');
 const formPopup = document.querySelector('#popup-form');
-const submitForm = (form) => {
+const formFilter = document.querySelector('#filter-form');
+const formPopupFilter = document.querySelector('#filter-modal-form');
+const submitFormPopup = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
@@ -239,8 +305,22 @@ const submitForm = (form) => {
   };
 }
 
-submitForm(formFooter);
-submitForm(formPopup)
+// const submitForm = (form) => {
+//   form.onsubmit = async (e) => {
+//     e.preventDefault();
+
+//     await fetch('https://echo.htmlacademy.ru/', {
+//       method: 'POST',
+//       body: new FormData(form)
+//     })
+
+//     form.reset();
+//   };
+// }
+
+submitFormPopup(formFooter);
+submitFormPopup(formPopup)
+// submitForm(formFilter);
 
 //Local storage
 window.addEventListener('DOMContentLoaded', function(){
@@ -259,3 +339,56 @@ window.addEventListener('DOMContentLoaded', function(){
     })
   }
 })
+
+//Set focus
+const element = document.querySelector('#popup-email');
+if(element) {
+  buttonOpen.addEventListener('click', () => {
+    element.focus();
+  });
+  buttonOpenTablet.addEventListener('click', () => {
+    element.focus();
+  });
+};
+
+//Filter
+const filterOpen = document.querySelector('.catalog__button');
+const filterClose = document.querySelector('.filter__close');
+const filter = document.querySelector('.filter');
+const filterOverlay = document.querySelector('.filter-overlay');
+
+if(filterOpen) {
+  filterOpen.addEventListener('click', (e) => {
+    e.preventDefault();
+    formFilter.reset();
+    filterOverlay.classList.toggle('filter-overlay--shown');
+    filter.classList.toggle('filter--opened');
+    body.classList.add('disable-scroll');
+  })
+};
+
+if(filterClose) {
+  filterClose.addEventListener('click', () => {
+    filterOverlay.classList.remove('overlay--shown');
+    filter.classList.remove('filter--opened');
+    body.classList.remove('disable-scroll');
+  })
+};
+
+document.addEventListener('keydown', (evt) => {
+  if(evt.keyCode === 27) {
+    filterOverlay.classList.remove('filter-overlay--shown');
+    filter.classList.remove('filter--opened');
+    body.classList.remove('disable-scroll');
+  }
+})
+
+if(filterOverlay) {
+  filterOverlay.addEventListener('click', (evt) => {
+    if (evt.target === filterOverlay) {
+      filterOverlay.classList.remove('filter-overlay--shown');
+      filter.classList.remove('filter--opened');
+      body.classList.remove('disable-scroll');
+    }
+  });
+};

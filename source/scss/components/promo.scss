@@ -25,6 +25,11 @@
   padding-bottom: 196px;
 }
 
+.promo__container--filter {
+  padding-top: 93px;
+  padding-bottom: 103px;
+}
+
 .promo p {
   margin: 0;
   margin-bottom: 10px;
@@ -48,7 +53,7 @@
   color: $color-white;
 }
 
-.promo--filter .promo_container {
+.promo--filter .promo__container {
   padding-top: 92px;
   padding-bottom: 104px;
 }
@@ -95,7 +100,7 @@
     padding-right: 17px;
   }
 
-  .promo--filter .promo_container {
+  .promo--filter .promo__container {
     padding-bottom: 104px;
   }
 
@@ -128,6 +133,11 @@
   .promo__container {
     padding-top: 188px;
     padding-bottom: 201px;
+  }
+
+  .promo--filter .promo__container {
+    padding-top: 81px;
+    padding-bottom: 81px;
   }
 
   .promo p {

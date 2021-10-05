@@ -37,10 +37,6 @@
   border-bottom: 1px solid $color-white;
 }
 
-.main-footer__first-column form:hover {
-  outline: 1px solid $color-white;
-}
-
 .main-footer__first-column label,
 .main-footer__first-column input {
   border: none;
@@ -51,6 +47,11 @@
 .main-footer__first-column input {
   padding: 10px 0;
   color: $color-white;
+}
+
+.main-footer__first-column input:hover,
+.main-footer__first-column input:focus {
+  outline: 1px solid $color-white;
 }
 
 .main-footer__first-column input::placeholder {

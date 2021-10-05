@@ -58,7 +58,8 @@
   font-size: 34px;
 }
 
-.popup__content input:hover {
+.popup__content input:hover,
+.popup__content input:focus {
   outline: 1px solid $color-zeus;
 }
 

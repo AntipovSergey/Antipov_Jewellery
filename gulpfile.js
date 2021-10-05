@@ -52,7 +52,7 @@ const video = () => {
 // Scripts
 
 const scripts = () => {
-  return gulp.src(["source/js/script.js","source/js/vendor.js"])
+  return gulp.src(["source/js/main.js","source/js/vendor.js"])
     // .pipe(terser())
     // .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))

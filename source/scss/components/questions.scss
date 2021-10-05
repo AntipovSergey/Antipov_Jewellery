@@ -43,6 +43,7 @@
   font-weight: 500;
   line-height: 71%;
   font-size: 18px;
+  cursor: default;
 }
 
 .questions__accordeon-button {
@@ -76,6 +77,7 @@
   margin: 0;
   margin-right: 403px;
   line-height: 125%;
+  cursor: default;
 }
 
 @include tablet {

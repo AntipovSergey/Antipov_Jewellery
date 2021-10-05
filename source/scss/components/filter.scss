@@ -1,0 +1,254 @@
+.filter {
+  width: 250px;
+}
+
+.filter form {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__close {
+  display: none;
+}
+
+.filter__accordeon {
+  width: 100%;
+  border: 1px solid $color-muesli;
+  border-bottom: none;
+
+  &:last-of-type {
+    border-bottom: 1px solid $color-muesli;
+  }
+}
+
+.filter__accordeon--nojs .questions__accordeon-button {
+  display: none;
+}
+
+.filter__accordeon--nojs .questions__accordeon-bottom {
+  display: block;
+  padding: 0 0 43px 49px;
+}
+
+.filter__accordeon-top {
+  padding: 24px 23px;
+  padding-right: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__accordeon-top--nojs .filter__accordeon-button {
+  background-image: url("../img/icons/arrow-top.svg");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 10px;
+}
+
+.filter__accordeon-top h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: default;
+}
+
+.filter__accordeon-button {
+  margin-right: 4px;
+  background-image: url("../img/icons/arrow-bottom.svg");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 10px;
+}
+
+.is-open .filter__accordeon-button {
+  background-image: url("../img/icons/arrow-top.svg");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 10px;
+}
+
+.filter__accordeon-bottom {
+  display: none;
+}
+
+.filter__accordeon-bottom--nojs {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: -2px;
+  padding: 0 34px;
+  padding-bottom: 27px;
+}
+
+.filter__accordeon-bottom.is-open {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: -2px;
+  padding: 0 34px;
+  padding-bottom: 27px;
+}
+
+.filter__checkbox {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.filter__checkbox input {
+  display: block;
+  margin-right: 9px;
+  appearance: none;
+  width: 16px;
+  height: 15px;
+  cursor: pointer;
+  background-image: url("../img/icons/checkbox.svg");
+
+  &:hover {
+    outline: 1px solid $color-black;
+  }
+
+  &:checked {
+    background-image: url("../img/icons/checkbox-checked.svg");
+  }
+}
+
+.filter__checkbox label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.filter__accordeon:last-of-type .filter__accordeon-bottom {
+  padding: 0 24px;
+  padding-top: 4px;
+  padding-bottom: 16px;
+}
+
+.filter__accordeon:last-of-type .filter__accordeon-top {
+  padding-top: 20px;
+  padding-bottom: 23px;
+  padding-right: 19px;
+}
+
+.filter__range {
+  margin-bottom: 13px;
+}
+
+.filter__bar {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: $color-pearl-bush;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 60px;
+    width: 90px;
+    height: 1px;
+    background-color: $color-muesli;
+  }
+}
+
+.filter__handlers {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -7px;
+    left: 45px;
+    background-image: url("../img/icons/handle.svg");
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -7px;
+    right: 35px;
+    background-image: url("../img/icons/handle.svg");
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+  }
+}
+
+.filter__price {
+  margin: 0 auto;
+  width: 63%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter__price span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.filter__price span:last-of-type {
+  display: block;
+  margin-right: -12px;
+}
+
+.filter__form-button {
+  margin-top: 24px;
+  padding-top: 26px;
+  padding-bottom: 23px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  transition: all ease-in-out 0.3s;
+
+  &:first-of-type {
+    margin-top: 35px;
+  }
+}
+
+.filter__form-button--submit {
+  color: $color-white;
+  background-color: $color-muesli;
+  border: 1px solid $color-muesli;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transition: all ease-in-out 0.3s;
+    color: $color-muesli;
+    background-color: $color-white;
+  }
+}
+
+.filter__form-button--clear {
+  color: $color-zeus;
+  background-color: $color-white;
+  border: 1px solid $color-muesli;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transition: all ease-in-out 0.3s;
+    color: $color-white;
+    background-color: $color-muesli;
+  }
+}
+
+@include tablet {
+  .filter {
+    display: none;
+  }
+
+  .filter--opened {
+    width: 423px;
+    display: block;
+    z-index: 2000;
+    box-shadow: 0 5px 32px $color-desert-storm;
+  }
+}

@@ -1,0 +1,52 @@
+.catalog__container {
+  padding-top: 80px;
+  padding-bottom: 35px;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  column-gap: 50px;
+}
+
+.catalog__button {
+  display: none;
+}
+
+@include tablet {
+  .catalog__container {
+    padding-top: 50px;
+    padding-bottom: 35px;
+    grid-template-columns: 1fr;
+    column-gap: 50px;
+  }
+
+  .catalog__button {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 22px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $color-white;
+    background-color: $color-muesli;
+    transition: all ease-in-out 0.3s;
+    border: 1px solid $color-muesli;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: all ease-in-out 0.3s;
+      color: $color-muesli;
+      background-color: $color-white;
+    }
+  }
+}
+
+@include mobile {
+  .catalog__container {
+    padding-top: 41px;
+  }
+
+  .catalog__button {
+    margin-bottom: 42px;
+  }
+}
