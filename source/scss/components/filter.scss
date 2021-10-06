@@ -294,10 +294,6 @@
     height: 18px;
     background-image: url("../img/icons/checkbox-big.svg");
 
-    &:hover {
-      outline: 1px solid $color-black;
-    }
-
     &:checked {
       background-image: url("../img/icons/checkbox-checked-big.svg");
     }
@@ -357,7 +353,6 @@
   .filter__price {
     margin-left: 42px;
     width: 64%;
-    justify-content: space-between;
   }
 
   .filter__form-button:first-of-type {

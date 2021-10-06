@@ -13,9 +13,7 @@
 @include tablet {
   .catalog__container {
     padding-top: 50px;
-    padding-bottom: 35px;
     grid-template-columns: 1fr;
-    column-gap: 50px;
   }
 
   .catalog__button {

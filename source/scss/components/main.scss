@@ -45,3 +45,18 @@
   width: 100%;
   transition: all ease-in-out 0.3s;
 }
+
+@include mobile {
+  .main__logo {
+    transform: translate(-77%, -50%);
+  }
+
+  .main__logo svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .main__link {
+    font-size: 20px;
+  }
+}

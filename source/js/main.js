@@ -1,6 +1,8 @@
-document.onkeydown = function(e){
-  if (e.keyCode == 32) e.preventDefault();
-};
+if(document) {
+  document.onkeydown = function(e){
+    if (e.keyCode == 32) e.preventDefault();
+  };
+}
 
 //Реализация открытия/закрытия меню в шапке и no-js
 const header = document.querySelector('.main-header')
@@ -320,8 +322,13 @@ const submitForm = (form) => {
   };
 }
 
-submitFormPopup(formFooter);
-submitFormPopup(formPopup)
+if (formFooter) {
+  submitFormPopup(formFooter);
+}
+
+if (formPopup) {
+  submitFormPopup(formPopup);
+}
 
 if (formFilter) {
   submitForm(formFilter);
