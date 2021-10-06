@@ -305,22 +305,27 @@ const submitFormPopup = (form) => {
   };
 }
 
-// const submitForm = (form) => {
-//   form.onsubmit = async (e) => {
-//     e.preventDefault();
+const submitForm = (form) => {
+  form.onsubmit = async (e) => {
+    e.preventDefault();
 
-//     await fetch('https://echo.htmlacademy.ru/', {
-//       method: 'POST',
-//       body: new FormData(form)
-//     })
+    await fetch('https://echo.htmlacademy.ru/', {
+      method: 'POST',
+      body: new FormData(form)
+    })
 
-//     form.reset();
-//   };
-// }
+    form.reset();
+    filterOverlay.classList.remove('filter-overlay--shown');
+    filter.classList.remove('filter--opened');
+  };
+}
 
 submitFormPopup(formFooter);
 submitFormPopup(formPopup)
-// submitForm(formFilter);
+
+if (formFilter) {
+  submitForm(formFilter);
+}
 
 //Local storage
 window.addEventListener('DOMContentLoaded', function(){
@@ -369,7 +374,7 @@ if(filterOpen) {
 
 if(filterClose) {
   filterClose.addEventListener('click', () => {
-    filterOverlay.classList.remove('overlay--shown');
+    filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
     body.classList.remove('disable-scroll');
   })

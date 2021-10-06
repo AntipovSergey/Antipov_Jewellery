@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 1000vh;
   background-color: $color-white;
   cursor: pointer;
   z-index: 600;
@@ -15,10 +15,4 @@
 .filter-overlay--shown {
   display: flex;
   overflow-y: auto;
-}
-
-.filter-overlay--shown .filter-overlay__logo {
-  position: absolute;
-  top: 0;
-  left: 0;
 }

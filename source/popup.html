@@ -15,40 +15,43 @@
   <link rel="preload" href="fonts/cormorantGaramond-MediumItalic.woff2" as="font" crossorigin>
 </head>
 <body>
-  <div class="site-container">
-    <div class="overlay overlay--shown">
-      <a href="index.html" class="overlay__logo">
-        <svg width="66" height="66"  xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/sprite.svg#logo"></use>
-        </svg>
-      </a>
-      <div class="popup popup--opened">
-        <button class="popup__close btn-reset" aria-label="Закрыть модальное окно">
-          <svg width="14" height="14"  xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/sprite.svg#popup-close"></use>
+  <main>
+    <h1 class="visually-hidden">Окно с модальным окном</h1>
+    <div class="site-container">
+      <div class="overlay overlay--shown">
+        <a href="index.html" class="overlay__logo">
+          <svg width="66" height="66"  xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#logo"></use>
           </svg>
-        </button>
-        <div class="popup__img"></div>
-        <div class="popup__content">
-          <h2>Log In</h2>
-          <form id="popup-form" method="POST" action="https://echo.htmlacademy.ru/">
-            <label for="popup-email">
-              <input autocomplete="off" type="email" name="popup-email" id="popup-email" placeholder="Your E-mail" required >
-            </label>
-            <label for="popup-password">
-              <input autocomplete="off" type="password" name="popup-password" id="popup-password" placeholder="Password" required>
-            </label>
-            <a class="popup__password" href="#">Forgot your password?</a>
-            <button class="popup__button btn-reset" type="submit">Log In</button>
-          </form>
-          <div class="popup__sign">
-            <span>Don’t have an account?</span>
-            <a class="popup__login" href="#">Sign up</a>
+        </a>
+        <div class="popup popup--opened">
+          <button class="popup__close btn-reset" aria-label="Закрыть модальное окно">
+            <svg width="14" height="14"  xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#popup-close"></use>
+            </svg>
+          </button>
+          <div class="popup__img"></div>
+          <div class="popup__content">
+            <h2>Log In</h2>
+            <form id="popup-form" method="POST" action="https://echo.htmlacademy.ru/">
+              <label for="popup-email">
+                <input autocomplete="off" type="email" name="popup-email" id="popup-email" placeholder="Your E-mail" required >
+              </label>
+              <label for="popup-password">
+                <input autocomplete="off" type="password" name="popup-password" id="popup-password" placeholder="Password" required>
+              </label>
+              <a class="popup__password" href="#">Forgot your password?</a>
+              <button class="popup__button btn-reset" type="submit">Log In</button>
+            </form>
+            <div class="popup__sign">
+              <span>Don’t have an account?</span>
+              <a class="popup__login" href="#">Sign up</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
   <script src="js/vendor.js"></script>
   <script src="js/script.js"></script>
 </body>

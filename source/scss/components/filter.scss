@@ -1,4 +1,5 @@
 .filter {
+  position: relative;
   width: 250px;
 }
 
@@ -36,6 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .filter__accordeon-top--nojs .filter__accordeon-button {
@@ -49,7 +51,7 @@
   margin: 0;
   font-weight: 400;
   font-size: 16px;
-  cursor: default;
+  cursor: pointer;
 }
 
 .filter__accordeon-button {
@@ -248,7 +250,215 @@
   .filter--opened {
     width: 423px;
     display: block;
-    z-index: 2000;
+    z-index: 3000;
     box-shadow: 0 5px 32px $color-desert-storm;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .filter form {
+    align-items: center;
+  }
+
+  .filter__accordeon {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .filter__accordeon-top {
+    padding: 36px 34px 36px 21px;
+  }
+
+  .filter__accordeon-top h3 {
+    font-size: 18px;
+  }
+
+  .filter__accordeon-button {
+    background-image: url("../img/icons/arrow-bottom-big.svg");
+    width: 25px;
+    height: 14px;
+  }
+
+  .is-open .filter__accordeon-button {
+    background-image: url("../img/icons/arrow-top-big.svg");
+    width: 25px;
+    height: 14px;
+  }
+
+  .filter__checkbox input {
+    margin-right: 13px;
+    width: 18px;
+    height: 18px;
+    background-image: url("../img/icons/checkbox-big.svg");
+
+    &:hover {
+      outline: 1px solid $color-black;
+    }
+
+    &:checked {
+      background-image: url("../img/icons/checkbox-checked-big.svg");
+    }
+  }
+
+  .filter__checkbox label,
+  .filter__price span {
+    font-size: 16px;
+  }
+
+  .filter__accordeon-bottom.is-open {
+    margin-top: -11px;
+    padding: 0 29px 37px;
+  }
+
+  .filter__checkbox:not(:last-of-type) {
+    margin-bottom: 18px;
+  }
+
+  .filter__accordeon:last-of-type .filter__accordeon-top {
+    padding-top: 34px;
+    padding-bottom: 23px;
+    padding-right: 35px;
+  }
+
+  .filter__accordeon:last-of-type .filter__accordeon-bottom {
+    padding: 23px 24px 33px;
+    padding-right: 88px;
+  }
+
+  .filter__bar::before {
+    width: 174px;
+  }
+
+  .filter__handlers {
+    &::before {
+      top: -8px;
+      left: 50px;
+      background-image: url("../img/icons/handle-big.svg");
+      width: 18px;
+      height: 18px;
+    }
+
+    &::after {
+      top: -8px;
+      right: 65px;
+      background-image: url("../img/icons/handle-big.svg");
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .filter__range {
+    margin-bottom: 17px;
+  }
+
+  .filter__price {
+    margin-left: 42px;
+    width: 64%;
+    justify-content: space-between;
+  }
+
+  .filter__form-button:first-of-type {
+    margin-top: 39px;
+  }
+
+  .filter__form-button {
+    margin-right: 21px;
+    width: 86%;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .filter__close {
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: -21px;
+    color: $color-zeus;
+    transition: all ease-in-out 0.3s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: all ease-in-out 0.3s;
+      color: $color-muesli;
+    }
+  }
+}
+
+
+@include mobile {
+  .filter--opened {
+    width: 270px;
+  }
+
+  .filter__accordeon-top {
+    padding: 26px 13px 26px 20px;
+  }
+
+  .filter__accordeon-bottom.is-open {
+    margin-top: 0;
+    padding-bottom: 23px;
+  }
+
+  .filter__accordeon:last-of-type .filter__accordeon-top {
+    padding-top: 29px;
+    padding-right: 13px;
+  }
+
+  .filter__accordeon:last-of-type .filter__accordeon-bottom {
+    padding: 11px 88px 25px 24px;
+  }
+
+  .filter__bar::before {
+    top: -1px;
+    left: 43px;
+    width: 125px;
+  }
+
+  .filter__handlers {
+    &::before {
+      top: -11px;
+      left: 27px;
+    }
+
+    &::after {
+      top: -10px;
+      right: -25px;
+    }
+  }
+
+  .filter__range {
+    margin-bottom: 14px;
+  }
+
+  .filter__price {
+    margin-left: 20px;
+    width: 102%;
+  }
+
+  .filter__form-button {
+    margin-top: 20px;
+    margin-right: -4px;
+    padding-top: 24px;
+    padding-bottom: 22px;
+    width: 85%;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  .filter__form-button:first-of-type {
+    margin-top: 30px;
+  }
+
+  .filter__close {
+    top: -19px;
+    right: -18px;
   }
 }
