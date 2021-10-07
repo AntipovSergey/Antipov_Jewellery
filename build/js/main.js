@@ -167,11 +167,11 @@ if (accordeons) {
   });
 }
 
-const accordeonsFilter = document.querySelectorAll('.filter__accordeon-top');
+const accordeonsFilterTop = document.querySelectorAll('.filter__accordeon-top');
 const accordeonsFilterBottom = document.querySelectorAll('.filter__accordeon-bottom');
 
-if (accordeonsFilter && accordeonsFilterBottom) {
-  accordeonsFilter.forEach(el => {
+if (accordeonsFilterTop && accordeonsFilterBottom) {
+  accordeonsFilterTop.forEach(el => {
     el.classList.remove('filter__accordeon-top--nojs');
   })
 
@@ -179,7 +179,7 @@ if (accordeonsFilter && accordeonsFilterBottom) {
     el.classList.remove('filter__accordeon-bottom--nojs');
   })
 
-  accordeonsFilter.forEach(el => {
+  accordeonsFilterTop.forEach(el => {
     el.addEventListener('click', (e) => {
       const self = e.currentTarget;
       const control = document.querySelector('.filter__accordeon-button');
@@ -203,7 +203,26 @@ if (accordeonsFilter && accordeonsFilterBottom) {
     });
   });
 
-  accordeonsFilter.forEach(el => {
+  accordeonsFilterBottom.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const self = e.currentTarget;
+      const control = document.querySelector('.filter__accordeon-button');
+      const content = document.querySelector('.filter__accordeon-bottom');
+      // self.classList.toggle('is-open');
+        self.classList.remove('is-open');
+        self.previousElementSibling.classList.remove('is-open');
+
+      if (self.classList.contains('is-open')) {
+        control.setAttribute('aria-expanded', true);
+        content.setAttribute('aria-hidden', false);
+      } else {
+        control.setAttribute('aria-expanded', false);
+        content.setAttribute('aria-hidden', true);
+      }
+    });
+  });
+
+  accordeonsFilterTop.forEach(el => {
     el.addEventListener('keydown', (e) => {
       if(e.keyCode === 32) {
         console.log('g')
