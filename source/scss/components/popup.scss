@@ -37,6 +37,7 @@
   background-image: url("../img/popup-img.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: $color-muesli;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/popup-img@2x.jpg");
