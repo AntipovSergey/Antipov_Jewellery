@@ -50,6 +50,10 @@
   align-items: center;
 }
 
+.popup__content form {
+  background-color: $color-pearl-bush;
+}
+
 .popup__content h2 {
   margin: 0;
   margin-bottom: 39px;
@@ -73,6 +77,7 @@
   padding: 10px 0;
   color: $color-zeus;
   border: none;
+  border-radius: 0;
   border-bottom: 1px solid $color-zeus;
 }
 

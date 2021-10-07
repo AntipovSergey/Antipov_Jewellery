@@ -50,12 +50,21 @@
   display: block;
   margin-right: 89px;
   color: $color-muesli;
+  transition: all ease-in-out 0.3s;
+
+  &--active:hover,
+  &--active:active,
+  &--active:focus {
+    color: $color-zeus;
+    transition: all ease-in-out 0.3s;
+  }
 }
 
 .header-top__user-navigation {
   padding-top: 12px;
   width: 119px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   font-weight: 500;
   font-size: 14px;

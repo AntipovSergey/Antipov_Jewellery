@@ -4,18 +4,18 @@
 }
 
 .promo--main {
-  background-image: url("../img/promo-bg.jpg");
+  background-image: url("../img/promo-bg.webp");
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/promo-bg@2x.jpg");
+    background-image: url("../img/promo-bg@2x.webp");
   }
 }
 
 .promo--filter {
-  background-image: url("../img/promo-bg-filter.jpg");
+  background-image: url("../img/promo-bg-filter.webp");
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/promo-bg-filter@2x.jpg");
+    background-image: url("../img/promo-bg-filter@2x.webp");
   }
 }
 
@@ -115,18 +115,18 @@
 
 @include mobile {
   .promo--main {
-    background-image: url("../img/promo-bg-mobile.jpg");
+    background-image: url("../img/promo-bg-mobile.webp");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/promo-bg-mobile@2x.jpg");
+      background-image: url("../img/promo-bg-mobile@2x.webp");
     }
   }
 
   .promo--filter {
-    background-image: url("../img/promo-bg-filter-mobile.jpg");
+    background-image: url("../img/promo-bg-filter-mobile.webp");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/promo-bg-filter-mobile@2x.jpg");
+      background-image: url("../img/promo-bg-filter-mobile@2x.webp");
     }
   }
 

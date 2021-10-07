@@ -51,22 +51,27 @@
 @include tablet {
   .cards__item img {
     display: block;
-    margin-bottom: -64px;
+    // margin-bottom: -64px;
+  }
+
+  .cards__item picture {
+    height: 208px;
   }
 }
 
 @include mobile {
   .cards__list {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 28px;
+    row-gap: 26px;
   }
 
-  .cards__item img {
-    margin-bottom: -138px;
-  }
+  // .cards__item img {
+  //   margin-bottom: -138px;
+  // }
 
   .cards__item picture {
     margin-bottom: 18px;
+    height: 136px;
   }
 
   .cards__item h3 {

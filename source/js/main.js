@@ -42,8 +42,6 @@ const swiper = new Swiper('.swiper-container', {
   },
   breakpoints: {
     768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -189,10 +187,10 @@ if (accordeonsFilter && accordeonsFilterBottom) {
       // self.classList.toggle('is-open');
       if (self.classList.contains('is-open')) {
         self.classList.remove('is-open');
-        self.nextSibling.classList.remove('is-open');
+        self.nextElementSibling.classList.remove('is-open');
       } else {
         self.classList.add('is-open');
-        self.nextSibling.classList.add('is-open');
+        self.nextElementSibling.classList.add('is-open');
       }
 
       if (self.classList.contains('is-open')) {
@@ -215,10 +213,10 @@ if (accordeonsFilter && accordeonsFilterBottom) {
         // self.classList.toggle('is-open');
         if (self.classList.contains('is-open')) {
           self.classList.remove('is-open');
-          self.nextSibling.classList.remove('is-open');
+          self.nextElementSibling.classList.remove('is-open');
         } else {
           self.classList.add('is-open');
-          self.nextSibling.classList.add('is-open');
+          self.nextElementSibling.classList.add('is-open');
         }
 
         if (self.classList.contains('is-open')) {
