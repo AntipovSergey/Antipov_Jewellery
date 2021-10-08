@@ -457,7 +457,11 @@ if(filterOverlay) {
   });
 };
 
-filterClose.addEventListener("blur", function() {
-  filterOverlay.classList.remove('filter-overlay--shown');
-  filter.classList.remove('filter--opened');
-});
+if (filterOverlay) {
+
+  filterClose.addEventListener("blur", function() {
+    filterOverlay.classList.remove('filter-overlay--shown');
+    filter.classList.remove('filter--opened');
+  });
+
+}
