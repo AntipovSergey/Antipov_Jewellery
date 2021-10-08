@@ -356,7 +356,7 @@ const submitForm = (form) => {
     })
 
     form.reset();
-    filterOverlay.classList.remove('overlay--shown');
+    filterOverlay.classList.remove('filter- overlay--shown');
     filter.classList.remove('filter--opened');
   };
 }
@@ -428,6 +428,7 @@ if(filterOpen) {
     formFilter.reset();
     filterOverlay.classList.toggle('filter-overlay--shown');
     filter.classList.toggle('filter--opened');
+    body.classList.remove('disable-scroll');
   })
 };
 
