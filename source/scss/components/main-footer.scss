@@ -41,11 +41,12 @@
 .main-footer__first-column input {
   border: none;
   background-color: transparent;
-  width: 100%;
+  width: 89%;
 }
 
 .main-footer__first-column input {
   padding: 10px 0;
+  padding-right: 120px;
   color: $color-white;
   border-radius: 0;
 }
@@ -253,6 +254,14 @@
   .main-footer__second-column {
     margin-top: 45px;
     flex-direction: column;
+  }
+
+  .main-footer__first-column input,
+  .main-footer__first-column label {
+    border: 0;
+    background-color: transparent;
+    width: 82%;
+    padding-right: 9px;
   }
 
   .main-footer__list:not(:last-child) {

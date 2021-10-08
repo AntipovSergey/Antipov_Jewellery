@@ -80,7 +80,7 @@
   margin-top: -2px;
   padding: 0 34px;
   padding-bottom: 27px;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .filter__accordeon-bottom.is-open {
@@ -90,7 +90,7 @@
   margin-top: -2px;
   padding: 0 34px;
   padding-bottom: 27px;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .filter__checkbox {
@@ -120,6 +120,7 @@
     background-image: url("../img/icons/checkbox-checked.svg");
   }
 }
+
 
 .filter__checkbox label {
   font-weight: 500;
@@ -260,6 +261,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @media (max-height: 873px) {
+    .filter--opened {
+      top: 90%;
+    }
   }
 
   .filter form {

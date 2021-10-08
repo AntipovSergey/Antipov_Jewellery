@@ -34,7 +34,7 @@
 }
 
 .blog__image {
-  flex-grow: 0;
+  flex-shrink: 0;
   width: 50%;
   object-fit: cover;
 }
@@ -44,8 +44,8 @@
 }
 
 .blog__content {
-  flex-shrink: 0;
-  flex-grow: 2;
+  // flex-shrink: 0;
+  // flex-grow: 2;
   padding-bottom: 7px;
   width: 285px;
   margin-left: auto;

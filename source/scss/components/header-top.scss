@@ -63,9 +63,12 @@
 .header-top__user-navigation {
   padding-top: 12px;
   width: 119px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;

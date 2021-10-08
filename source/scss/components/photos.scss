@@ -30,6 +30,7 @@
   display: grid;
   column-gap: 27px;
   row-gap: 34px;
+  grid-template-columns: minmax(min-content, 230px) 399px minmax(min-content, 230px) minmax(min-content, 230px);
   grid-template-areas:
     "first-medium big second-medium third-medium"
     "first-small big second-small third-small";
@@ -61,6 +62,7 @@
 
 .photos__item--big {
   grid-area: big;
+  // width: 399px;
 }
 
 @include tablet {
@@ -69,9 +71,10 @@
   }
 
   .photos__list {
-    width: 100%;
+    // width: 100%;
     column-gap: 16px;
     row-gap: 20px;
+    grid-template-columns: 133px 231px 133px 133px;
   }
 
   .photos__container h2 {
@@ -110,6 +113,7 @@
   .photos__list {
     column-gap: 24px;
     row-gap: 27px;
+    grid-template-columns: minmax(133px, max-content) 133px;
     grid-template-areas:
       "first-medium big"
       "first-small big"

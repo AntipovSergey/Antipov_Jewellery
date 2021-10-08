@@ -42,6 +42,8 @@ const swiper = new Swiper('.swiper-container', {
   },
   breakpoints: {
     768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -203,24 +205,24 @@ if (accordeonsFilterTop && accordeonsFilterBottom) {
     });
   });
 
-  accordeonsFilterBottom.forEach(el => {
-    el.addEventListener('click', (e) => {
-      const self = e.currentTarget;
-      const control = document.querySelector('.filter__accordeon-button');
-      const content = document.querySelector('.filter__accordeon-bottom');
-      // self.classList.toggle('is-open');
-        self.classList.remove('is-open');
-        self.previousElementSibling.classList.remove('is-open');
+  // accordeonsFilterBottom.forEach(el => {
+  //   el.addEventListener('click', (e) => {
+  //     const self = e.currentTarget;
+  //     const control = document.querySelector('.filter__accordeon-button');
+  //     const content = document.querySelector('.filter__accordeon-bottom');
+  //     // self.classList.toggle('is-open');
+  //       self.classList.remove('is-open');
+  //       self.previousElementSibling.classList.remove('is-open');
 
-      if (self.classList.contains('is-open')) {
-        control.setAttribute('aria-expanded', true);
-        content.setAttribute('aria-hidden', false);
-      } else {
-        control.setAttribute('aria-expanded', false);
-        content.setAttribute('aria-hidden', true);
-      }
-    });
-  });
+  //     if (self.classList.contains('is-open')) {
+  //       control.setAttribute('aria-expanded', true);
+  //       content.setAttribute('aria-hidden', false);
+  //     } else {
+  //       control.setAttribute('aria-expanded', false);
+  //       content.setAttribute('aria-hidden', true);
+  //     }
+  //   });
+  // });
 
   accordeonsFilterTop.forEach(el => {
     el.addEventListener('keydown', (e) => {
@@ -304,6 +306,26 @@ if(overlay) {
   });
 };
 
+buttonClose.addEventListener("blur", function() {
+  overlay.classList.remove('overlay--shown');
+  popup.classList.remove('popup--opened');
+  body.classList.remove('disable-scroll');
+});
+
+const checkboxes = document.querySelectorAll('.checkbox');
+
+checkboxes.forEach(el => {
+  el.addEventListener('keydown', (e) => {
+    if(e.keyCode === 32) {
+      if(el.checked) {
+        el.checked = false;
+      } else {
+        el.checked = true;
+      }
+    }
+  });
+});
+
 //Отправка формы
 const formFooter = document.querySelector('#footer-form');
 const formPopup = document.querySelector('#popup-form');
@@ -334,13 +356,26 @@ const submitForm = (form) => {
     })
 
     form.reset();
-    filterOverlay.classList.remove('filter-overlay--shown');
+    filterOverlay.classList.remove('overlay--shown');
     filter.classList.remove('filter--opened');
   };
 }
 
+const submitFormFooter = (form) => {
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch('https://echo.htmlacademy.ru/', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+
+    form.reset();
+  };
+}
+
 if (formFooter) {
-  submitFormPopup(formFooter);
+  submitFormFooter(formFooter);
 }
 
 if (formPopup) {
@@ -380,6 +415,7 @@ if(element) {
   });
 };
 
+
 //Filter
 const filterOpen = document.querySelector('.catalog__button');
 const filterClose = document.querySelector('.filter__close');
@@ -392,7 +428,6 @@ if(filterOpen) {
     formFilter.reset();
     filterOverlay.classList.toggle('filter-overlay--shown');
     filter.classList.toggle('filter--opened');
-    body.classList.add('disable-scroll');
   })
 };
 
@@ -400,24 +435,29 @@ if(filterClose) {
   filterClose.addEventListener('click', () => {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
-    body.classList.remove('disable-scroll');
   })
 };
+
+if (filterOverlay) {
 
 document.addEventListener('keydown', (evt) => {
   if(evt.keyCode === 27) {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
-    body.classList.remove('disable-scroll');
   }
 })
+}
 
 if(filterOverlay) {
   filterOverlay.addEventListener('click', (evt) => {
     if (evt.target === filterOverlay) {
       filterOverlay.classList.remove('filter-overlay--shown');
       filter.classList.remove('filter--opened');
-      body.classList.remove('disable-scroll');
     }
   });
 };
+
+filterClose.addEventListener("blur", function() {
+  filterOverlay.classList.remove('filter-overlay--shown');
+  filter.classList.remove('filter--opened');
+});

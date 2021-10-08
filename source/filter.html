@@ -103,11 +103,6 @@
           <h2 class="visually-hidden">Каталог</h2>
           <button class="catalog__button btn-reset" type="button">Filter</button>
           <div class="catalog__filter filter">
-            <button class="filter__close btn-reset" aria-label="Закрыть фильтр" type="button">
-              <svg width="32" height="32"  xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprite.svg#filter-close"></use>
-              </svg>
-            </button>
             <form id="filter-form" method="POST" action="https://echo.htmlacademy.ru/">
               <div class="filter__accordeon">
                 <div class="filter__accordeon-top is-open filter__accordeon-top--nojs" tabindex="0">
@@ -116,19 +111,19 @@
                 </div>
                 <div class="filter__accordeon-bottom is-open filter__accordeon-bottom--nojs" aria-hidden="true">
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="necklaces" id="necklaces" checked>
+                    <input type="checkbox" class="checkbox" name="necklaces" id="necklaces" checked tabindex="0">
                     <label for="necklaces">Necklaces</label>
                   </div>
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="chokers" id="chokers" checked>
+                    <input type="checkbox" class="checkbox" name="chokers" id="chokers" checked tabindex="0">
                     <label for="chokers">Chokers</label>
                   </div>
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="rings" id="rings">
+                    <input type="checkbox" class="checkbox" name="rings" id="rings" tabindex="0">
                     <label for="rings">Rings</label>
                   </div>
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="earrings" id="earrings" checked>
+                    <input type="checkbox" class="checkbox" name="earrings" id="earrings" checked tabindex="0">
                     <label for="earrings">Earrings</label>
                   </div>
                 </div>
@@ -140,11 +135,11 @@
                 </div>
                 <div class="filter__accordeon-bottom filter__accordeon-bottom--nojs" aria-hidden="true">
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="gold" id="gold">
+                    <input type="checkbox" class="checkbox" name="gold" id="gold" tabindex="0">
                     <label for="gold">Gold</label>
                   </div>
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="silver" id="silver">
+                    <input type="checkbox" class="checkbox" name="silver" id="silver" tabindex="0">
                     <label for="silver">Silver</label>
                   </div>
                 </div>
@@ -156,11 +151,11 @@
                 </div>
                 <div class="filter__accordeon-bottom filter__accordeon-bottom--nojs" aria-hidden="true">
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="pink-flamingo" id="pink-flamingo">
+                    <input type="checkbox" class="checkbox" name="pink-flamingo" id="pink-flamingo" tabindex="0">
                     <label for="pink-flamingo">Pink flamingo</label>
                   </div>
                   <div class="filter__checkbox">
-                    <input type="checkbox" name="dreams" id="dreams">
+                    <input type="checkbox" class="checkbox" name="dreams" id="dreams" tabindex="0">
                     <label for="dreams">Dreams</label>
                   </div>
                 </div>
@@ -184,6 +179,11 @@
               <button class="filter__form-button filter__form-button--submit btn-reset" type="submit">Apply</button>
               <button class="filter__form-button filter__form-button--clear btn-reset" type="reset">Clear All</button>
             </form>
+            <button class="filter__close btn-reset" aria-label="Закрыть фильтр" type="button">
+              <svg width="32" height="32"  xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#filter-close"></use>
+              </svg>
+            </button>
           </div>
           <div class="catalog__cards cards">
             <ul class="cards__list">
