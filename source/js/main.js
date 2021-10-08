@@ -356,7 +356,7 @@ const submitForm = (form) => {
     })
 
     form.reset();
-    filterOverlay.classList.remove('filter- overlay--shown');
+    filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
   };
 }
