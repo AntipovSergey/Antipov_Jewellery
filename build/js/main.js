@@ -335,10 +335,15 @@ const submitFormPopup = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    await fetch('https://echo.htmlacademy.ru/', {
+    let response = await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
+
+
+    let result = await response.json();
+
+    alert(result);
 
     form.reset();
     overlay.classList.toggle('overlay--shown');
@@ -350,10 +355,14 @@ const submitForm = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    await fetch('https://echo.htmlacademy.ru/', {
+    let response = await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
+
+    let result = await response.json();
+
+    alert(result.message);
 
     form.reset();
     filterOverlay.classList.remove('filter-overlay--shown');
@@ -365,10 +374,14 @@ const submitFormFooter = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    await fetch('https://echo.htmlacademy.ru/', {
+    let response = await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
+
+    let result = await response.json();
+
+    alert(result.message);
 
     form.reset();
   };
@@ -428,7 +441,7 @@ if(filterOpen) {
     formFilter.reset();
     filterOverlay.classList.toggle('filter-overlay--shown');
     filter.classList.toggle('filter--opened');
-    body.classList.remove('disable-scroll');
+    body.classList.add('disable-scroll');
   })
 };
 
@@ -436,6 +449,7 @@ if(filterClose) {
   filterClose.addEventListener('click', () => {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
+    body.classList.remove('disable-scroll');
   })
 };
 
@@ -445,6 +459,7 @@ document.addEventListener('keydown', (evt) => {
   if(evt.keyCode === 27) {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
+    body.classList.remove('disable-scroll');
   }
 })
 }
@@ -454,6 +469,7 @@ if(filterOverlay) {
     if (evt.target === filterOverlay) {
       filterOverlay.classList.remove('filter-overlay--shown');
       filter.classList.remove('filter--opened');
+      body.classList.remove('disable-scroll');
     }
   });
 };
@@ -463,6 +479,7 @@ if (filterOverlay) {
   filterClose.addEventListener("blur", function() {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
+    body.classList.remove('disable-scroll');
   });
 
 }

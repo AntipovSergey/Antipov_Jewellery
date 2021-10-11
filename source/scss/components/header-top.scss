@@ -107,6 +107,10 @@
   margin-right: 3px;
 }
 
+.header-top__login {
+  cursor: pointer;
+}
+
 @include tablet {
   .header-top {
     padding: 0;

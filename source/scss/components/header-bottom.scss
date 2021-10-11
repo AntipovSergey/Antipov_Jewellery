@@ -39,7 +39,7 @@
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     z-index: 100;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .header-bottom.open::before,
