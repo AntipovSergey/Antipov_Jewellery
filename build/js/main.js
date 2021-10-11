@@ -21,6 +21,7 @@ if(menuBtn) {
     header.classList.toggle('open');
     topMenu.classList.toggle('open');
     bottomMenu.classList.toggle('open');
+    body.classList.toggle('disable-scroll');
   });
 }
 
@@ -335,15 +336,13 @@ const submitFormPopup = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    let response = await fetch('https://echo.htmlacademy.ru/', {
+    await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
 
-
-    let result = await response.json();
-
-    alert(result);
+    alert("Форма успешно отправлена!");
+    body.classList.remove('disable-scroll');
 
     form.reset();
     overlay.classList.toggle('overlay--shown');
@@ -355,14 +354,13 @@ const submitForm = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    let response = await fetch('https://echo.htmlacademy.ru/', {
+    await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
 
-    let result = await response.json();
-
-    alert(result.message);
+    alert("Форма успешно отправлена!");
+    body.classList.remove('disable-scroll');
 
     form.reset();
     filterOverlay.classList.remove('filter-overlay--shown');
@@ -374,14 +372,13 @@ const submitFormFooter = (form) => {
   form.onsubmit = async (e) => {
     e.preventDefault();
 
-    let response = await fetch('https://echo.htmlacademy.ru/', {
+    await fetch('https://echo.htmlacademy.ru/', {
       method: 'POST',
       body: new FormData(form)
     })
 
-    let result = await response.json();
-
-    alert(result.message);
+    alert("Форма успешно отправлена!");
+    body.classList.remove('disable-scroll');
 
     form.reset();
   };
@@ -477,9 +474,7 @@ if(filterOverlay) {
 if (filterOverlay) {
 
   filterClose.addEventListener("blur", function() {
-    filterOverlay.classList.remove('filter-overlay--shown');
-    filter.classList.remove('filter--opened');
-    body.classList.remove('disable-scroll');
+    element.focus();
   });
 
 }

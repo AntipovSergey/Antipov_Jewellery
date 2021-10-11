@@ -263,6 +263,10 @@
     transform: translate(-50%, -50%);
   }
 
+  body {
+    max-height: 1500px;
+  }
+
   @media (max-height: 873px) {
     .filter--opened {
       top: 90%;
