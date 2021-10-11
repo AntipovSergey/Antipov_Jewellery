@@ -486,20 +486,20 @@
           <h2>Log In</h2>
           <form id="popup-form" method="POST" action="https://echo.htmlacademy.ru/">
             <label for="popup-email">
-              <input type="email" name="popup-email" id="popup-email" placeholder="Your E-mail" required autocomplete="off" tabindex="1">
+              <input type="email" name="popup-email" id="popup-email" placeholder="Your E-mail" required autocomplete="off" tabindex="2">
             </label>
             <label for="popup-password">
-              <input type="password" name="popup-password" id="popup-password" placeholder="Password" required autocomplete="off">
+              <input type="password" name="popup-password" id="popup-password" placeholder="Password" required autocomplete="off" tabindex="3">
             </label>
-            <a class="popup__password" href="#">Forgot your password?</a>
-            <button class="popup__button btn-reset" type="submit">Log In</button>
+            <a class="popup__password" href="#" tabindex="4">Forgot your password?</a>
+            <button class="popup__button btn-reset" type="submit" tabindex="5">Log In</button>
           </form>
           <div class="popup__sign">
             <span>Don’t have an account?</span>
-            <a class="popup__login" href="#">Sign up</a>
+            <a class="popup__login" href="#" tabindex="6">Sign up</a>
           </div>
         </div>
-        <button class="popup__close btn-reset" aria-label="Закрыть модальное окно" type="button">
+        <button class="popup__close btn-reset" aria-label="Закрыть модальное окно" type="button" tabindex="7">
           <svg width="14" height="14"  xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/sprite.svg#popup-close"></use>
           </svg>
