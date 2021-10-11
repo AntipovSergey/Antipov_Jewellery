@@ -308,9 +308,10 @@ if(overlay) {
 };
 
 buttonClose.addEventListener("blur", function() {
-  overlay.classList.remove('overlay--shown');
-  popup.classList.remove('popup--opened');
-  body.classList.remove('disable-scroll');
+  // overlay.classList.remove('overlay--shown');
+  // popup.classList.remove('popup--opened');
+  // body.classList.remove('disable-scroll');
+  element.focus();
 });
 
 const checkboxes = document.querySelectorAll('.checkbox');
@@ -438,7 +439,6 @@ if(filterOpen) {
     formFilter.reset();
     filterOverlay.classList.toggle('filter-overlay--shown');
     filter.classList.toggle('filter--opened');
-    body.classList.add('disable-scroll');
   })
 };
 
@@ -446,7 +446,7 @@ if(filterClose) {
   filterClose.addEventListener('click', () => {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
-    body.classList.remove('disable-scroll');
+    window.scroll(0, 0);
   })
 };
 
@@ -456,7 +456,7 @@ document.addEventListener('keydown', (evt) => {
   if(evt.keyCode === 27) {
     filterOverlay.classList.remove('filter-overlay--shown');
     filter.classList.remove('filter--opened');
-    body.classList.remove('disable-scroll');
+    window.scroll(0, 0);
   }
 })
 }
@@ -466,7 +466,7 @@ if(filterOverlay) {
     if (evt.target === filterOverlay) {
       filterOverlay.classList.remove('filter-overlay--shown');
       filter.classList.remove('filter--opened');
-      body.classList.remove('disable-scroll');
+      window.scroll(0, 0);
     }
   });
 };
@@ -474,7 +474,7 @@ if(filterOverlay) {
 if (filterOverlay) {
 
   filterClose.addEventListener("blur", function() {
-    element.focus();
+    document.querySelector('.filter__accordeon-top').focus();
   });
 
 }
